@@ -13,10 +13,10 @@
     html, body {
       margin: 0;
       padding: 0;
-      background: #000;
-      overflow: hidden;
       height: 100%;
       width: 100%;
+      background-color: #000; /* Full black background */
+      overflow: hidden;
     }
 
     #staticMenu {
@@ -50,11 +50,16 @@
     #game-container {
       width: 100vw;
       height: 100vh;
+      background-color: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     #player {
       width: 100%;
       height: 100%;
+      background-color: #000; /* Ensures Ruffle embed doesn't show any white margin */
     }
   </style>
 </head>
@@ -74,8 +79,9 @@
       const player = ruffle.createPlayer();
       player.style.width = "100%";
       player.style.height = "100%";
+      player.style.backgroundColor = "#000";
       document.getElementById("player").appendChild(player);
-      player.load("3-Slices.swf"); // Match exact filename (case-sensitive)
+      player.load("3-Slices.swf"); // Use exact case
     });
   </script>
 </body>
